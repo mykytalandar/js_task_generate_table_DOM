@@ -360,31 +360,37 @@ console.log(people); // you can remove it
 for (const person of people) {
   const tr = document.createElement('tr');
 
-  const thName = document.createElement('th');
-  thName.innerText = person.name;
+  const tdName = document.createElement('td');
 
-  const thGender = document.createElement('th');
-  thGender.innerText = (person.sex === 'm') ? 'Male' : 'Female';
+  tdName.innerText = person.name;
 
-  const thBorn = document.createElement('th');
-  thBorn.innerText = person.born;
+  const tdGender = document.createElement('td');
 
-  const thDied = document.createElement('th');
-  thDied.innerText = person.died;
+  tdGender.innerText = person.sex === 'm' ? 'Male' : 'Female';
 
-  const thAge = document.createElement('th');
-  thAge.innerText = person.died - person.born;
+  const tdBorn = document.createElement('td');
 
-  const thCentury = document.createElement('th');
-  thCentury.innerText = Math.ceil(person.died / 100);
+  tdBorn.innerText = person.born;
 
+  const tdDied = document.createElement('td');
+
+  tdDied.innerText = person.died;
+
+  const tdAge = document.createElement('td');
+
+  tdAge.innerText = person.died - person.born;
+
+  const tdCentury = document.createElement('td');
+
+  tdCentury.innerText = Math.ceil(person.died / 100);
 
   const dashboard = document.querySelector('.dashboard');
+
   dashboard.append(tr);
-    tr.append(thName);
-    tr.append(thGender);
-    tr.append(thBorn);
-    tr.append(thDied);
-    tr.append(thAge);
-    tr.append(thCentury);
+  tr.append(tdName);
+  tr.append(tdGender);
+  tr.append(tdBorn);
+  tr.append(tdDied);
+  tr.append(tdAge);
+  tr.append(tdCentury);
 }
